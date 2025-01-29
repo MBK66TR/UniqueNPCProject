@@ -2,6 +2,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "AIController.h"
 #include "NavigationSystem.h"
+#include "Blueprint/UserWidget.h"
 
 
 // Sets default values
@@ -28,8 +29,34 @@ void ABaseNpc::BeginPlay()
 
 void ABaseNpc::Interact_Implementation(AActor* Interactor)
 {
-    //will override in blueprint
-    //will be open widgets here
+    if (InteractionWidgetClass)
+    {
+        // Widget'ı oluştur ve NPC referansını aktar
+        InteractionWidget = CreateWidget<UUserWidget>(GetWorld()->GetFirstPlayerController(), InteractionWidgetClass);
+        if (UUserWidget* Widget = InteractionWidget)
+        {
+            // NPC referansını widget'a aktar
+            if (UFunction* SetNPCFunc = Widget->FindFunction(FName("SetNPCReference")))
+            {
+                struct
+                {
+                    ABaseNpc* NPC;
+                } Params;
+                Params.NPC = this;
+                Widget->ProcessEvent(SetNPCFunc, &Params);
+            }
+
+            Widget->AddToViewport();
+
+            // Mouse'u göster ve input modunu UI'a çevir
+            if (APlayerController* PC = GetWorld()->GetFirstPlayerController())
+            {
+                PC->SetShowMouseCursor(true);
+                FInputModeUIOnly InputMode;
+                PC->SetInputMode(InputMode);
+            }
+        }
+    }
 }
 
 void ABaseNpc::GetNPCProperties_Implementation(float& OutProperty1, int32& OutProperty2, bool& OutProperty3)
@@ -43,17 +70,17 @@ void ABaseNpc::GetNPCProperties_Implementation(float& OutProperty1, int32& OutPr
 // we will override in blueprint
 void ABaseNpc::ExecuteOption1_Implementation(AActor* Interactor) 
 {
-    // Blueprint'te override edilecek
+    
 }
 
 void ABaseNpc::ExecuteOption2_Implementation(AActor* Interactor) 
 {
-    // Blueprint'te override edilecek
+    
 }
 
 void ABaseNpc::ExecuteOption3_Implementation(AActor* Interactor) 
 {
-    // Blueprint'te override edilecek
+    
 }
 
 bool ABaseNpc::CanInteract_Implementation(AActor* Interactor) const

@@ -7,6 +7,8 @@
 #include "UObject/GeneratedCppIncludes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeUniqueNPCProject_init() {}
+	UNIQUENPCPROJECT_API UFunction* Z_Construct_UDelegateFunction_UniqueNPCProject_OnHotbarUpdated__DelegateSignature();
+	UNIQUENPCPROJECT_API UFunction* Z_Construct_UDelegateFunction_UniqueNPCProject_OnInteractionUpdated__DelegateSignature();
 	UNIQUENPCPROJECT_API UFunction* Z_Construct_UDelegateFunction_UniqueNPCProject_OnPickUp__DelegateSignature();
 	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_UniqueNPCProject;
 	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_UniqueNPCProject()
@@ -14,6 +16,8 @@ void EmptyLinkFunctionForGeneratedCodeUniqueNPCProject_init() {}
 		if (!Z_Registration_Info_UPackage__Script_UniqueNPCProject.OuterSingleton)
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
+				(UObject* (*)())Z_Construct_UDelegateFunction_UniqueNPCProject_OnHotbarUpdated__DelegateSignature,
+				(UObject* (*)())Z_Construct_UDelegateFunction_UniqueNPCProject_OnInteractionUpdated__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_UniqueNPCProject_OnPickUp__DelegateSignature,
 			};
 			static const UECodeGen_Private::FPackageParams PackageParams = {
@@ -21,13 +25,13 @@ void EmptyLinkFunctionForGeneratedCodeUniqueNPCProject_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x443582FC,
-				0x87570B4B,
+				0x91E7F8B8,
+				0x0EE28AD3,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_UniqueNPCProject.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_UniqueNPCProject.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_UniqueNPCProject(Z_Construct_UPackage__Script_UniqueNPCProject, TEXT("/Script/UniqueNPCProject"), Z_Registration_Info_UPackage__Script_UniqueNPCProject, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x443582FC, 0x87570B4B));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_UniqueNPCProject(Z_Construct_UPackage__Script_UniqueNPCProject, TEXT("/Script/UniqueNPCProject"), Z_Registration_Info_UPackage__Script_UniqueNPCProject, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x91E7F8B8, 0x0EE28AD3));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

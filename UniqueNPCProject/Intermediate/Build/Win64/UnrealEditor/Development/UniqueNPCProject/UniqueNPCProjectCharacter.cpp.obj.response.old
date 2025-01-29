@@ -1,12 +1,23 @@
 C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\UniqueNPCProjectCharacter.cpp
 /I .
-/I C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Inc\UniqueNPCProject\UHT
-/I C:\Dev\UniqueNPCProject\UniqueNPCProject\Source
+/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Slate\UHT
 /I Runtime
+/I Runtime\Slate\Public
 /I Runtime\TraceLog\Public
 /I Runtime\Core\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject\UHT
 /I Runtime\CoreUObject\Public
+/I Runtime\ApplicationCore\Public
+/I Runtime\RHI\Public
+/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\InputCore\UHT
+/I Runtime\InputCore\Classes
+/I Runtime\InputCore\Public
+/I Runtime\Json\Public
+/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\SlateCore\UHT
+/I Runtime\SlateCore\Public
+/I Runtime\ImageWrapper\Public
+/I ThirdParty
+/I Runtime\ImageCore\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine\UHT
 /I ..\Shaders\Shared
 /I Runtime\Engine\Classes
@@ -18,21 +29,8 @@ C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\UniqueNPCProjec
 /I Runtime\Net\Core\Classes
 /I Runtime\Net\Core\Public
 /I Runtime\Net\Common\Public
-/I Runtime\ApplicationCore\Public
-/I Runtime\RHI\Public
-/I Runtime\ImageCore\Public
-/I Runtime\Json\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\JsonUtilities\UHT
 /I Runtime\JsonUtilities\Public
-/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\SlateCore\UHT
-/I Runtime\SlateCore\Public
-/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\InputCore\UHT
-/I Runtime\InputCore\Classes
-/I Runtime\InputCore\Public
-/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Slate\UHT
-/I Runtime\Slate\Public
-/I Runtime\ImageWrapper\Public
-/I ThirdParty
 /I Runtime\Messaging\Public
 /I Runtime\MessagingCommon\Public
 /I Runtime\RenderCore\Public
@@ -271,6 +269,8 @@ C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\UniqueNPCProjec
 /I Runtime\MovieSceneCapture\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController\UHT
 /I Developer\AnimationDataController\Public
+/I C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Inc\UniqueNPCProject\UHT
+/I C:\Dev\UniqueNPCProject\UniqueNPCProject\Source
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AugmentedReality\UHT
 /I Runtime\AugmentedReality\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\MRMesh\UHT
@@ -287,10 +287,7 @@ C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\UniqueNPCProjec
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt"
-/FI"C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UniqueNPCProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/FI"C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Development\UniqueNPCProject\Definitions.UniqueNPCProject.h"
-/Yu"C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UniqueNPCProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UniqueNPCProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+/FI"C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Development\UniqueNPCProject\Definitions.h"
 /Fo"C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Development\UniqueNPCProject\UniqueNPCProjectCharacter.cpp.obj"
 /sourceDependencies C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Development\UniqueNPCProject\UniqueNPCProjectCharacter.cpp.dep.json
 /Zc:inline

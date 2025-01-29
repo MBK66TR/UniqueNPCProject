@@ -35,6 +35,8 @@ AUniqueNPCProjectCharacter::AUniqueNPCProjectCharacter()
 	//Mesh1P->SetRelativeRotation(FRotator(0.9f, -19.19f, 5.2f));
 	Mesh1P->SetRelativeLocation(FVector(-30.f, 0.f, -150.f));
 
+	// Hotbar'ı başlangıçta boş slotlarla doldur
+	HotbarItems.SetNum(MaxHotbarSlots);
 }
 
 void AUniqueNPCProjectCharacter::BeginPlay()
@@ -51,6 +53,69 @@ void AUniqueNPCProjectCharacter::BeginPlay()
 		}
 	}
 
+	// Tick'te sürekli kontrol etmek için
+	PrimaryActorTick.bCanEverTick = true;
+}
+
+void AUniqueNPCProjectCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	// Her frame'de etkileşime girebilecek aktörleri kontrol et
+	CheckForInteractables();
+}
+
+void AUniqueNPCProjectCharacter::CheckForInteractables()
+{
+	// Kameranın konumunu ve yönünü al
+	FVector Location;
+	FRotator Rotation;
+	GetActorEyesViewPoint(Location, Rotation);
+
+	// Line trace için bitiş noktası
+	FVector End = Location + (Rotation.Vector() * InteractionDistance);
+
+	// Line trace parametreleri
+	FHitResult Hit;
+	FCollisionQueryParams QueryParams;
+	QueryParams.AddIgnoredActor(this);
+
+	// Line trace yap
+	bool bHit = GetWorld()->LineTraceSingleByChannel(Hit, Location, End, ECC_Visibility, QueryParams);
+
+	// Önceki interactable aktörü kaydet
+	AActor* PreviousInteractable = InteractableActor;
+
+	if (bHit)
+	{
+		// Vurulan aktör IInteractable interface'ini implement ediyor mu kontrol et
+		if (Hit.GetActor()->Implements<UIInteractable>())
+		{
+			InteractableActor = Hit.GetActor();
+		}
+		else
+		{
+			InteractableActor = nullptr;
+		}
+	}
+	else
+	{
+		InteractableActor = nullptr;
+	}
+
+	// Eğer interactable aktör değiştiyse delegate'i çağır
+	if (PreviousInteractable != InteractableActor)
+	{
+		OnInteractionUpdated.Broadcast();
+	}
+}
+
+void AUniqueNPCProjectCharacter::Interact()
+{
+	if (InteractableActor)
+	{
+		IIInteractable::Execute_Interact(InteractableActor, this);
+	}
 }
 
 //////////////////////////////////////////////////////////////////////////// Input
@@ -69,6 +134,14 @@ void AUniqueNPCProjectCharacter::SetupPlayerInputComponent(class UInputComponent
 
 		//Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AUniqueNPCProjectCharacter::Look);
+
+		// Hotbar slot seçimi için
+		for (int32 i = 1; i <= MaxHotbarSlots; i++)
+		{
+			FString ActionName = FString::Printf(TEXT("SelectHotbarSlot%d"), i);
+			EnhancedInputComponent->BindAction(*ActionName, IE_Pressed, this, 
+				&AUniqueNPCProjectCharacter::SetActiveHotbarSlot, i - 1);
+		}
 	}
 }
 
@@ -107,4 +180,41 @@ void AUniqueNPCProjectCharacter::SetHasRifle(bool bNewHasRifle)
 bool AUniqueNPCProjectCharacter::GetHasRifle()
 {
 	return bHasRifle;
+}
+
+bool AUniqueNPCProjectCharacter::AddItemToHotbar(const FInventoryItem& Item)
+{
+	// Boş slot ara
+	for (int32 i = 0; i < HotbarItems.Num(); i++)
+	{
+		if (HotbarItems[i].Name.IsEmpty())
+		{
+			HotbarItems[i] = Item;
+			OnHotbarUpdated.Broadcast(i);
+			return true;
+		}
+	}
+	return false; // Boş slot bulunamadı
+}
+
+void AUniqueNPCProjectCharacter::UseHotbarItem(int32 SlotIndex)
+{
+	if (SlotIndex >= 0 && SlotIndex < HotbarItems.Num())
+	{
+		if (!HotbarItems[SlotIndex].Name.IsEmpty())
+		{
+			// Item kullanma lojiği burada
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, 
+				FString::Printf(TEXT("Using item: %s"), *HotbarItems[SlotIndex].Name));
+		}
+	}
+}
+
+void AUniqueNPCProjectCharacter::SetActiveHotbarSlot(int32 SlotIndex)
+{
+	if (SlotIndex >= 0 && SlotIndex < MaxHotbarSlots)
+	{
+		ActiveHotbarSlot = SlotIndex;
+		OnHotbarUpdated.Broadcast(SlotIndex);
+	}
 }

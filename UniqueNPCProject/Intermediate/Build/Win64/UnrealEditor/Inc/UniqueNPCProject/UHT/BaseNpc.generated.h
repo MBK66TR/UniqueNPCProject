@@ -9,28 +9,31 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class ABaseNpc;
 #ifdef UNIQUENPCPROJECT_BaseNpc_generated_h
 #error "BaseNpc.generated.h already included, missing '#pragma once' in BaseNpc.h"
 #endif
 #define UNIQUENPCPROJECT_BaseNpc_generated_h
 
-#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_SPARSE_DATA
-#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_RPC_WRAPPERS \
+#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_SPARSE_DATA
+#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execGetNPCReference); \
 	DECLARE_FUNCTION(execRandomizeProperties); \
 	DECLARE_FUNCTION(execReturnToSpawn); \
 	DECLARE_FUNCTION(execMoveToTarget);
 
 
-#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execGetNPCReference); \
 	DECLARE_FUNCTION(execRandomizeProperties); \
 	DECLARE_FUNCTION(execReturnToSpawn); \
 	DECLARE_FUNCTION(execMoveToTarget);
 
 
-#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_ACCESSORS
-#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_ACCESSORS
+#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABaseNpc(); \
 	friend struct Z_Construct_UClass_ABaseNpc_Statics; \
@@ -40,7 +43,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<ABaseNpc*>(this); }
 
 
-#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_INCLASS \
+#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_INCLASS \
 private: \
 	static void StaticRegisterNativesABaseNpc(); \
 	friend struct Z_Construct_UClass_ABaseNpc_Statics; \
@@ -50,7 +53,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<ABaseNpc*>(this); }
 
 
-#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_STANDARD_CONSTRUCTORS \
+#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ABaseNpc(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABaseNpc) \
@@ -64,7 +67,7 @@ public: \
 	NO_API virtual ~ABaseNpc();
 
 
-#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ABaseNpc(ABaseNpc&&); \
@@ -76,27 +79,27 @@ public: \
 	NO_API virtual ~ABaseNpc();
 
 
-#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_9_PROLOG
-#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_GENERATED_BODY_LEGACY \
+#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_10_PROLOG
+#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_SPARSE_DATA \
-	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_RPC_WRAPPERS \
-	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_ACCESSORS \
-	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_INCLASS \
-	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_STANDARD_CONSTRUCTORS \
+	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_SPARSE_DATA \
+	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_RPC_WRAPPERS \
+	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_ACCESSORS \
+	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_INCLASS \
+	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_GENERATED_BODY \
+#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_SPARSE_DATA \
-	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_ACCESSORS \
-	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_INCLASS_NO_PURE_DECLS \
-	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_12_ENHANCED_CONSTRUCTORS \
+	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_SPARSE_DATA \
+	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_ACCESSORS \
+	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

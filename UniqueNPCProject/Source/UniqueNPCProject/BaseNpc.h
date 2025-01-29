@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "IInteractable.h"
+#include "Blueprint/UserWidget.h"
 #include "BaseNPC.generated.h"
 UCLASS()
 class UNIQUENPCPROJECT_API ABaseNpc : public ACharacter, public IIInteractable
@@ -33,6 +34,14 @@ protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPC Movement")
     FVector SpawnLocation;
 
+    // Widget sınıfı referansı
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
+    TSubclassOf<UUserWidget> InteractionWidgetClass;
+
+    // Aktif widget referansı
+    UPROPERTY()
+    UUserWidget* InteractionWidget;
+
 public:	
 
     virtual void Interact_Implementation(AActor* Interactor) override;
@@ -52,5 +61,8 @@ public:
     UFUNCTION(BlueprintCallable, Category = "NPC Properties")
     void RandomizeProperties();
 
+    // Widget'a NPC referansını vermek için getter
+    UFUNCTION(BlueprintCallable, Category = "UI")
+    ABaseNpc* GetNPCReference() { return this; }
 
 };
