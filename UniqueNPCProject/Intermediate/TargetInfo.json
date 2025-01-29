@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UniqueNPCProject",
+			"Path": "C:\\Dev\\UniqueNPCProject\\UniqueNPCProject\\Source\\UniqueNPCProject.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UniqueNPCProjectEditor",
+			"Path": "C:\\Dev\\UniqueNPCProject\\UniqueNPCProject\\Source\\UniqueNPCProjectEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

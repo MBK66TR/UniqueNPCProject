@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\dev\\uniquenpcproject\\uniquenpcproject\\intermediate\\build\\win64\\unrealeditor\\inc\\uniquenpcproject\\uht\\iinteractable.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\dev\\uniquenpcproject\\uniquenpcproject\\intermediate\\build\\win64\\uniquenpcprojecteditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\dev\\uniquenpcproject\\uniquenpcproject\\intermediate\\build\\win64\\unrealeditor\\development\\uniquenpcproject\\definitions.uniquenpcproject.h",
+            "c:\\dev\\uniquenpcproject\\uniquenpcproject\\source\\uniquenpcproject\\iinteractable.h",
+            "c:\\dev\\uniquenpcproject\\uniquenpcproject\\intermediate\\build\\win64\\unrealeditor\\inc\\uniquenpcproject\\uht\\iinteractable.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

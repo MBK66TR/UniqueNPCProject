@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Dev/UniqueNPCProject/UniqueNPCProject/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
+				"C:/Dev/UniqueNPCProject/UniqueNPCProject/Content/BaseNpcTry.uasset",
+				"C:/Dev/UniqueNPCProject/UniqueNPCProject/Content/Blueprints/BP_BaseNpc.uasset",
+				"C:/Dev/UniqueNPCProject/UniqueNPCProject/Content/FirstPerson/Maps/FirstPersonMap.umap",
+				"C:/Dev/UniqueNPCProject/UniqueNPCProject/Content/UI/WBP_NPCInteraction.uasset"
+			]
+		}
+	]
+}

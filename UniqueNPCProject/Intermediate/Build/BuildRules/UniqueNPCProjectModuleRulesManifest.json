@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Dev\\UniqueNPCProject\\UniqueNPCProject\\Source\\UniqueNPCProject\\UniqueNPCProject.Build.cs",
+		"C:\\Dev\\UniqueNPCProject\\UniqueNPCProject\\Source\\UniqueNPCProject.Target.cs",
+		"C:\\Dev\\UniqueNPCProject\\UniqueNPCProject\\Source\\UniqueNPCProjectEditor.Target.cs"
+	],
+	"EngineVersion": "5.1.1"
+}
