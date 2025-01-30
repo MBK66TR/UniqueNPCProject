@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define UNIQUENPCPROJECT_InventoryItemStruct_generated_h
 
-#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_InventoryItemStruct_h_10_GENERATED_BODY \
+#define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_InventoryItemStruct_h_13_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FInventoryItem_Statics; \
 	UNIQUENPCPROJECT_API static class UScriptStruct* StaticStruct();
 

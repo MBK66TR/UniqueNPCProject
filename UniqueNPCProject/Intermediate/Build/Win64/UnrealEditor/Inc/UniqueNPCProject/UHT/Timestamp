@@ -1,8 +1,9 @@
-C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\BaseNpc.h
 C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\IInteractable.h
+C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\InventoryItemStruct.h
+C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\PickupItem.h
 C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\TP_PickUpComponent.h
 C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\TP_WeaponComponent.h
+C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\BaseNpc.h
 C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\UniqueNPCProjectGameMode.h
 C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\UniqueNPCProjectProjectile.h
-C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\InventoryItemStruct.h
 C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\UniqueNPCProjectCharacter.h

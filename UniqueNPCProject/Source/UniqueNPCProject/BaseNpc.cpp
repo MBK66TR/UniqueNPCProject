@@ -21,14 +21,23 @@ void ABaseNpc::BeginPlay()
 	Super::BeginPlay();
 
     SpawnLocation = GetActorLocation();
-
     RandomizeProperties();
-
+    
+    // Widget'ı sıfırla
+    InteractionWidget = nullptr;
 }
 
 
 void ABaseNpc::Interact_Implementation(AActor* Interactor)
 {
+    // Eğer widget zaten açıksa, kapat
+    if (InteractionWidget)
+    {
+        CloseInteractionWidget();
+        return;
+    }
+
+    // Widget'ı aç
     if (InteractionWidgetClass)
     {
         // Widget'ı oluştur ve NPC referansını aktar
@@ -68,19 +77,28 @@ void ABaseNpc::GetNPCProperties_Implementation(float& OutProperty1, int32& OutPr
 
 
 // we will override in blueprint
-void ABaseNpc::ExecuteOption1_Implementation(AActor* Interactor) 
+void ABaseNpc::ExecuteOption1_Implementation(AActor* Interactor)
 {
+    // Option 1 işlemleri burada
     
+    // Widget'ı kapat
+    CloseInteractionWidget();
 }
 
-void ABaseNpc::ExecuteOption2_Implementation(AActor* Interactor) 
+void ABaseNpc::ExecuteOption2_Implementation(AActor* Interactor)
 {
+    // Option 2 işlemleri burada
     
+    // Widget'ı kapat
+    CloseInteractionWidget();
 }
 
-void ABaseNpc::ExecuteOption3_Implementation(AActor* Interactor) 
+void ABaseNpc::ExecuteOption3_Implementation(AActor* Interactor)
 {
+    // Option 3 işlemleri burada
     
+    // Widget'ı kapat
+    CloseInteractionWidget();
 }
 
 bool ABaseNpc::CanInteract_Implementation(AActor* Interactor) const
@@ -142,6 +160,23 @@ void ABaseNpc::RandomizeProperties()
     Property1 = FMath::RandRange(0.0f, 100.0f);
     Property2 = FMath::RandRange(0, 100);
     Property3 = FMath::RandBool();
+}
+
+void ABaseNpc::CloseInteractionWidget()
+{
+    if (InteractionWidget)
+    {
+        InteractionWidget->RemoveFromParent();
+        InteractionWidget = nullptr;
+
+        // Input modunu sıfırla
+        if (APlayerController* PC = GetWorld()->GetFirstPlayerController())
+        {
+            PC->SetShowMouseCursor(false);
+            FInputModeGameOnly InputMode;
+            PC->SetInputMode(InputMode);
+        }
+    }
 }
 
 

@@ -12,7 +12,6 @@
       <Filter>Source</Filter>
     </None>
     <None Include="..\..\.editorconfig" />
-    <None Include="..\..\.vsconfig" />
     <None Include="..\..\shadertoolsconfig.json" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
@@ -45,6 +44,18 @@
       <Filter>Source\UniqueNPCProject</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\UniqueNPCProject\IInteractable.h">
+      <Filter>Source\UniqueNPCProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UniqueNPCProject\InventoryItemStruct.cpp">
+      <Filter>Source\UniqueNPCProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UniqueNPCProject\InventoryItemStruct.h">
+      <Filter>Source\UniqueNPCProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UniqueNPCProject\PickupItem.cpp">
+      <Filter>Source\UniqueNPCProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UniqueNPCProject\PickupItem.h">
       <Filter>Source\UniqueNPCProject</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\UniqueNPCProject\TP_PickUpComponent.cpp">

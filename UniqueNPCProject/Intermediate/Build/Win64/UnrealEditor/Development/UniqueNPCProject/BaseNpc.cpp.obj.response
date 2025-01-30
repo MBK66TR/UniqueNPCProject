@@ -287,7 +287,10 @@ C:\Dev\UniqueNPCProject\UniqueNPCProject\Source\UniqueNPCProject\BaseNpc.cpp
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt"
-/FI"C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Development\UniqueNPCProject\Definitions.h"
+/FI"C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UniqueNPCProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/FI"C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Development\UniqueNPCProject\Definitions.UniqueNPCProject.h"
+/Yu"C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UniqueNPCProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UniqueNPCProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
 /Fo"C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Development\UniqueNPCProject\BaseNpc.cpp.obj"
 /sourceDependencies C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Development\UniqueNPCProject\BaseNpc.cpp.dep.json
 /Zc:inline

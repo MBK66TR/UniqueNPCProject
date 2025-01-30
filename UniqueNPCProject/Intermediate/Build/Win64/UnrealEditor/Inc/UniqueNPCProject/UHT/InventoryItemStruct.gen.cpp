@@ -39,7 +39,7 @@ template<> UNIQUENPCPROJECT_API UScriptStruct* StaticStruct<FInventoryItem>()
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Icon_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_Icon;
+		static const UECodeGen_Private::FSoftObjectPropertyParams NewProp_Icon;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Description_MetaData[];
 #endif
@@ -70,7 +70,7 @@ template<> UNIQUENPCPROJECT_API UScriptStruct* StaticStruct<FInventoryItem>()
 		{ "ModuleRelativePath", "InventoryItemStruct.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FInventoryItem_Statics::NewProp_Icon = { "Icon", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FInventoryItem, Icon), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FInventoryItem_Statics::NewProp_Icon_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FInventoryItem_Statics::NewProp_Icon_MetaData)) };
+	const UECodeGen_Private::FSoftObjectPropertyParams Z_Construct_UScriptStruct_FInventoryItem_Statics::NewProp_Icon = { "Icon", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::SoftObject, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FInventoryItem, Icon), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FInventoryItem_Statics::NewProp_Icon_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FInventoryItem_Statics::NewProp_Icon_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FInventoryItem_Statics::NewProp_Description_MetaData[] = {
 		{ "Category", "Item" },
@@ -109,9 +109,9 @@ template<> UNIQUENPCPROJECT_API UScriptStruct* StaticStruct<FInventoryItem>()
 		static const FStructRegisterCompiledInInfo ScriptStructInfo[];
 	};
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_InventoryItemStruct_h_Statics::ScriptStructInfo[] = {
-		{ FInventoryItem::StaticStruct, Z_Construct_UScriptStruct_FInventoryItem_Statics::NewStructOps, TEXT("InventoryItem"), &Z_Registration_Info_UScriptStruct_InventoryItem, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FInventoryItem), 602789644U) },
+		{ FInventoryItem::StaticStruct, Z_Construct_UScriptStruct_FInventoryItem_Statics::NewStructOps, TEXT("InventoryItem"), &Z_Registration_Info_UScriptStruct_InventoryItem, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FInventoryItem), 2624655456U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_InventoryItemStruct_h_2670252421(TEXT("/Script/UniqueNPCProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_InventoryItemStruct_h_3189988474(TEXT("/Script/UniqueNPCProject"),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_InventoryItemStruct_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_InventoryItemStruct_h_Statics::ScriptStructInfo),
 		nullptr, 0);

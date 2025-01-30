@@ -15,14 +15,6 @@ void EmptyLinkFunctionForGeneratedCodeIInteractable() {}
 	UNIQUENPCPROJECT_API UClass* Z_Construct_UClass_UIInteractable_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_UniqueNPCProject();
 // End Cross Module References
-	DEFINE_FUNCTION(IIInteractable::execCanInteract)
-	{
-		P_GET_OBJECT(AActor,Z_Param_Interactor);
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		*(bool*)Z_Param__Result=P_THIS->CanInteract_Implementation(Z_Param_Interactor);
-		P_NATIVE_END;
-	}
 	DEFINE_FUNCTION(IIInteractable::execExecuteOption3)
 	{
 		P_GET_OBJECT(AActor,Z_Param_Interactor);
@@ -55,6 +47,14 @@ void EmptyLinkFunctionForGeneratedCodeIInteractable() {}
 		P_FINISH;
 		P_NATIVE_BEGIN;
 		P_THIS->GetNPCProperties_Implementation(Z_Param_Out_Property1,Z_Param_Out_Property2,Z_Param_Out_Property3);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(IIInteractable::execCanInteract)
+	{
+		P_GET_OBJECT(AActor,Z_Param_Interactor);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(bool*)Z_Param__Result=P_THIS->CanInteract_Implementation(Z_Param_Interactor);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(IIInteractable::execInteract)
@@ -292,9 +292,9 @@ void EmptyLinkFunctionForGeneratedCodeIInteractable() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UIInteractable_GetNPCProperties_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Interaction" },
-		{ "Comment", "// NPC'nin \xc3\xb6zelliklerini almak i\xc3\xa7in fonksiyon\n" },
+		{ "Comment", "// Optional functions - only implemented by NPCs\n" },
 		{ "ModuleRelativePath", "IInteractable.h" },
-		{ "ToolTip", "NPC'nin \xc3\xb6zelliklerini almak i\xc3\xa7in fonksiyon" },
+		{ "ToolTip", "Optional functions - only implemented by NPCs" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIInteractable_GetNPCProperties_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UIInteractable, nullptr, "GetNPCProperties", nullptr, nullptr, sizeof(IInteractable_eventGetNPCProperties_Parms), Z_Construct_UFunction_UIInteractable_GetNPCProperties_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UIInteractable_GetNPCProperties_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C420C00, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UIInteractable_GetNPCProperties_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UIInteractable_GetNPCProperties_Statics::Function_MetaDataParams)) };
@@ -361,7 +361,7 @@ void EmptyLinkFunctionForGeneratedCodeIInteractable() {}
 		{ &Z_Construct_UFunction_UIInteractable_ExecuteOption1, "ExecuteOption1" }, // 3221139707
 		{ &Z_Construct_UFunction_UIInteractable_ExecuteOption2, "ExecuteOption2" }, // 1598172538
 		{ &Z_Construct_UFunction_UIInteractable_ExecuteOption3, "ExecuteOption3" }, // 1670547902
-		{ &Z_Construct_UFunction_UIInteractable_GetNPCProperties, "GetNPCProperties" }, // 3158380204
+		{ &Z_Construct_UFunction_UIInteractable_GetNPCProperties, "GetNPCProperties" }, // 3298755733
 		{ &Z_Construct_UFunction_UIInteractable_Interact, "Interact" }, // 1821821554
 	};
 #if WITH_METADATA
@@ -514,9 +514,9 @@ void EmptyLinkFunctionForGeneratedCodeIInteractable() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_IInteractable_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UIInteractable, UIInteractable::StaticClass, TEXT("UIInteractable"), &Z_Registration_Info_UClass_UIInteractable, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UIInteractable), 3045637389U) },
+		{ Z_Construct_UClass_UIInteractable, UIInteractable::StaticClass, TEXT("UIInteractable"), &Z_Registration_Info_UClass_UIInteractable, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UIInteractable), 3920413165U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_IInteractable_h_989847401(TEXT("/Script/UniqueNPCProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_IInteractable_h_2201691254(TEXT("/Script/UniqueNPCProject"),
 		Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_IInteractable_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_IInteractable_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -65,4 +65,8 @@ public:
     UFUNCTION(BlueprintCallable, Category = "UI")
     ABaseNpc* GetNPCReference() { return this; }
 
+    // Widget'ı kapatmak için yardımcı fonksiyon
+    UFUNCTION()
+    void CloseInteractionWidget();
+
 };

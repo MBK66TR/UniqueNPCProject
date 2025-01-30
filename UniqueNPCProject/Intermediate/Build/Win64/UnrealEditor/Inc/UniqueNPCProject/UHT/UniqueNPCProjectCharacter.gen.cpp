@@ -168,7 +168,7 @@ void EmptyLinkFunctionForGeneratedCodeUniqueNPCProjectCharacter() {}
 		{ "NativeConst", "" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AUniqueNPCProjectCharacter_AddItemToHotbar_Statics::NewProp_Item = { "Item", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UniqueNPCProjectCharacter_eventAddItemToHotbar_Parms, Item), Z_Construct_UScriptStruct_FInventoryItem, METADATA_PARAMS(Z_Construct_UFunction_AUniqueNPCProjectCharacter_AddItemToHotbar_Statics::NewProp_Item_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AUniqueNPCProjectCharacter_AddItemToHotbar_Statics::NewProp_Item_MetaData)) }; // 602789644
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AUniqueNPCProjectCharacter_AddItemToHotbar_Statics::NewProp_Item = { "Item", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UniqueNPCProjectCharacter_eventAddItemToHotbar_Parms, Item), Z_Construct_UScriptStruct_FInventoryItem, METADATA_PARAMS(Z_Construct_UFunction_AUniqueNPCProjectCharacter_AddItemToHotbar_Statics::NewProp_Item_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AUniqueNPCProjectCharacter_AddItemToHotbar_Statics::NewProp_Item_MetaData)) }; // 2624655456
 	void Z_Construct_UFunction_AUniqueNPCProjectCharacter_AddItemToHotbar_Statics::NewProp_ReturnValue_SetBit(void* Obj)
 	{
 		((UniqueNPCProjectCharacter_eventAddItemToHotbar_Parms*)Obj)->ReturnValue = 1;
@@ -433,6 +433,15 @@ void EmptyLinkFunctionForGeneratedCodeUniqueNPCProjectCharacter() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_LookAction;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_InteractAction_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_InteractAction;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_HotbarSlotActions_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_HotbarSlotActions_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_HotbarSlotActions;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_bHasRifle_MetaData[];
 #endif
 		static void NewProp_bHasRifle_SetBit(void* Obj);
@@ -475,7 +484,7 @@ void EmptyLinkFunctionForGeneratedCodeUniqueNPCProjectCharacter() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_UniqueNPCProject,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AUniqueNPCProjectCharacter_AddItemToHotbar, "AddItemToHotbar" }, // 3396640318
+		{ &Z_Construct_UFunction_AUniqueNPCProjectCharacter_AddItemToHotbar, "AddItemToHotbar" }, // 312980824
 		{ &Z_Construct_UFunction_AUniqueNPCProjectCharacter_CheckForInteractables, "CheckForInteractables" }, // 124179878
 		{ &Z_Construct_UFunction_AUniqueNPCProjectCharacter_GetHasRifle, "GetHasRifle" }, // 235987577
 		{ &Z_Construct_UFunction_AUniqueNPCProjectCharacter_Interact, "Interact" }, // 1981789894
@@ -550,7 +559,28 @@ void EmptyLinkFunctionForGeneratedCodeUniqueNPCProjectCharacter() {}
 		{ "ToolTip", "Look Input Action" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_LookAction = { "LookAction", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AUniqueNPCProjectCharacter, LookAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_LookAction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_LookAction_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_LookAction = { "LookAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AUniqueNPCProjectCharacter, LookAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_LookAction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_LookAction_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_InteractAction_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "Comment", "/** Interact Input Action */" },
+		{ "ModuleRelativePath", "UniqueNPCProjectCharacter.h" },
+		{ "ToolTip", "Interact Input Action" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_InteractAction = { "InteractAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AUniqueNPCProjectCharacter, InteractAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_InteractAction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_InteractAction_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarSlotActions_Inner = { "HotbarSlotActions", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarSlotActions_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "Comment", "/** Hotbar Slot Actions */" },
+		{ "ModuleRelativePath", "UniqueNPCProjectCharacter.h" },
+		{ "ToolTip", "Hotbar Slot Actions" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarSlotActions = { "HotbarSlotActions", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AUniqueNPCProjectCharacter, HotbarSlotActions), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarSlotActions_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarSlotActions_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_bHasRifle_MetaData[] = {
 		{ "Category", "Weapon" },
@@ -591,7 +621,7 @@ void EmptyLinkFunctionForGeneratedCodeUniqueNPCProjectCharacter() {}
 	};
 #endif
 	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_OnInteractionUpdated = { "OnInteractionUpdated", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AUniqueNPCProjectCharacter, OnInteractionUpdated), Z_Construct_UDelegateFunction_UniqueNPCProject_OnInteractionUpdated__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_OnInteractionUpdated_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_OnInteractionUpdated_MetaData)) }; // 3593923192
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarItems_Inner = { "HotbarItems", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FInventoryItem, METADATA_PARAMS(nullptr, 0) }; // 602789644
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarItems_Inner = { "HotbarItems", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FInventoryItem, METADATA_PARAMS(nullptr, 0) }; // 2624655456
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarItems_MetaData[] = {
 		{ "Category", "Hotbar" },
@@ -600,7 +630,7 @@ void EmptyLinkFunctionForGeneratedCodeUniqueNPCProjectCharacter() {}
 		{ "ToolTip", "Hotbar array'i" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarItems = { "HotbarItems", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AUniqueNPCProjectCharacter, HotbarItems), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarItems_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarItems_MetaData)) }; // 602789644
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarItems = { "HotbarItems", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AUniqueNPCProjectCharacter, HotbarItems), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarItems_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarItems_MetaData)) }; // 2624655456
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_MaxHotbarSlots_MetaData[] = {
 		{ "Category", "Hotbar" },
@@ -635,6 +665,9 @@ void EmptyLinkFunctionForGeneratedCodeUniqueNPCProjectCharacter() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_JumpAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_MoveAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_LookAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_InteractAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarSlotActions_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_HotbarSlotActions,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_bHasRifle,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_InteractionDistance,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUniqueNPCProjectCharacter_Statics::NewProp_InteractableActor,
@@ -682,9 +715,9 @@ void EmptyLinkFunctionForGeneratedCodeUniqueNPCProjectCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_UniqueNPCProjectCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AUniqueNPCProjectCharacter, AUniqueNPCProjectCharacter::StaticClass, TEXT("AUniqueNPCProjectCharacter"), &Z_Registration_Info_UClass_AUniqueNPCProjectCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AUniqueNPCProjectCharacter), 2696769141U) },
+		{ Z_Construct_UClass_AUniqueNPCProjectCharacter, AUniqueNPCProjectCharacter::StaticClass, TEXT("AUniqueNPCProjectCharacter"), &Z_Registration_Info_UClass_AUniqueNPCProjectCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AUniqueNPCProjectCharacter), 1995340144U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_UniqueNPCProjectCharacter_h_2729816299(TEXT("/Script/UniqueNPCProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_UniqueNPCProjectCharacter_h_582398575(TEXT("/Script/UniqueNPCProject"),
 		Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_UniqueNPCProjectCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_UniqueNPCProjectCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

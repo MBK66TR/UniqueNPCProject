@@ -17,34 +17,34 @@ class AActor;
 
 #define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_IInteractable_h_10_SPARSE_DATA
 #define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_IInteractable_h_10_RPC_WRAPPERS \
-	virtual bool CanInteract_Implementation(AActor* Interactor) const { return false; }; \
 	virtual void ExecuteOption3_Implementation(AActor* Interactor) {}; \
 	virtual void ExecuteOption2_Implementation(AActor* Interactor) {}; \
 	virtual void ExecuteOption1_Implementation(AActor* Interactor) {}; \
 	virtual void GetNPCProperties_Implementation(float& Property1, int32& Property2, bool& Property3) {}; \
+	virtual bool CanInteract_Implementation(AActor* Interactor) const { return false; }; \
 	virtual void Interact_Implementation(AActor* Interactor) {}; \
  \
-	DECLARE_FUNCTION(execCanInteract); \
 	DECLARE_FUNCTION(execExecuteOption3); \
 	DECLARE_FUNCTION(execExecuteOption2); \
 	DECLARE_FUNCTION(execExecuteOption1); \
 	DECLARE_FUNCTION(execGetNPCProperties); \
+	DECLARE_FUNCTION(execCanInteract); \
 	DECLARE_FUNCTION(execInteract);
 
 
 #define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_IInteractable_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
-	virtual bool CanInteract_Implementation(AActor* Interactor) const { return false; }; \
 	virtual void ExecuteOption3_Implementation(AActor* Interactor) {}; \
 	virtual void ExecuteOption2_Implementation(AActor* Interactor) {}; \
 	virtual void ExecuteOption1_Implementation(AActor* Interactor) {}; \
 	virtual void GetNPCProperties_Implementation(float& Property1, int32& Property2, bool& Property3) {}; \
+	virtual bool CanInteract_Implementation(AActor* Interactor) const { return false; }; \
 	virtual void Interact_Implementation(AActor* Interactor) {}; \
  \
-	DECLARE_FUNCTION(execCanInteract); \
 	DECLARE_FUNCTION(execExecuteOption3); \
 	DECLARE_FUNCTION(execExecuteOption2); \
 	DECLARE_FUNCTION(execExecuteOption1); \
 	DECLARE_FUNCTION(execGetNPCProperties); \
+	DECLARE_FUNCTION(execCanInteract); \
 	DECLARE_FUNCTION(execInteract);
 
 

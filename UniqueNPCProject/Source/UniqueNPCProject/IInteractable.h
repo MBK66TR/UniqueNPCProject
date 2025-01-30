@@ -19,7 +19,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction")
     void Interact(AActor* Interactor);
 
-    // NPC'nin özelliklerini almak için fonksiyon
+    // Etkileşime girilip girilemeyeceğini kontrol eden fonksiyon
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction")
+    bool CanInteract(AActor* Interactor) const;
+
+    // Optional functions - only implemented by NPCs
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction")
     void GetNPCProperties(float& Property1, int32& Property2, bool& Property3);
 
@@ -32,8 +36,4 @@ public:
 
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction")
     void ExecuteOption3(AActor* Interactor);
-
-    // Etkileşime girilip girilemeyeceğini kontrol eden fonksiyon
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction")
-    bool CanInteract(AActor* Interactor) const;
 };

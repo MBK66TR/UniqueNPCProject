@@ -18,6 +18,13 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 	UNIQUENPCPROJECT_API UClass* Z_Construct_UClass_UIInteractable_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_UniqueNPCProject();
 // End Cross Module References
+	DEFINE_FUNCTION(ABaseNpc::execCloseInteractionWidget)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->CloseInteractionWidget();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ABaseNpc::execGetNPCReference)
 	{
 		P_FINISH;
@@ -50,12 +57,37 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 	{
 		UClass* Class = ABaseNpc::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "CloseInteractionWidget", &ABaseNpc::execCloseInteractionWidget },
 			{ "GetNPCReference", &ABaseNpc::execGetNPCReference },
 			{ "MoveToTarget", &ABaseNpc::execMoveToTarget },
 			{ "RandomizeProperties", &ABaseNpc::execRandomizeProperties },
 			{ "ReturnToSpawn", &ABaseNpc::execReturnToSpawn },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ABaseNpc_CloseInteractionWidget_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseNpc_CloseInteractionWidget_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Widget'\xc4\xb1 kapatmak i\xc3\xa7in yard\xc4\xb1mc\xc4\xb1 fonksiyon\n" },
+		{ "ModuleRelativePath", "BaseNpc.h" },
+		{ "ToolTip", "Widget'\xc4\xb1 kapatmak i\xc3\xa7in yard\xc4\xb1mc\xc4\xb1 fonksiyon" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseNpc_CloseInteractionWidget_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseNpc, nullptr, "CloseInteractionWidget", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseNpc_CloseInteractionWidget_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseNpc_CloseInteractionWidget_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseNpc_CloseInteractionWidget()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABaseNpc_CloseInteractionWidget_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_ABaseNpc_GetNPCReference_Statics
 	{
@@ -212,6 +244,7 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_UniqueNPCProject,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABaseNpc_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ABaseNpc_CloseInteractionWidget, "CloseInteractionWidget" }, // 420446347
 		{ &Z_Construct_UFunction_ABaseNpc_GetNPCReference, "GetNPCReference" }, // 1504406924
 		{ &Z_Construct_UFunction_ABaseNpc_MoveToTarget, "MoveToTarget" }, // 313856068
 		{ &Z_Construct_UFunction_ABaseNpc_RandomizeProperties, "RandomizeProperties" }, // 430880416
@@ -291,7 +324,7 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseNpc_Statics::NewProp_InteractionWidget,
 	};
 		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ABaseNpc_Statics::InterfaceParams[] = {
-			{ Z_Construct_UClass_UIInteractable_NoRegister, (int32)VTABLE_OFFSET(ABaseNpc, IIInteractable), false },  // 3045637389
+			{ Z_Construct_UClass_UIInteractable_NoRegister, (int32)VTABLE_OFFSET(ABaseNpc, IIInteractable), false },  // 3920413165
 		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABaseNpc_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABaseNpc>::IsAbstract,
@@ -330,9 +363,9 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABaseNpc, ABaseNpc::StaticClass, TEXT("ABaseNpc"), &Z_Registration_Info_UClass_ABaseNpc, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseNpc), 1770270786U) },
+		{ Z_Construct_UClass_ABaseNpc, ABaseNpc::StaticClass, TEXT("ABaseNpc"), &Z_Registration_Info_UClass_ABaseNpc, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseNpc), 145510788U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_4076402700(TEXT("/Script/UniqueNPCProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_3008547750(TEXT("/Script/UniqueNPCProject"),
 		Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

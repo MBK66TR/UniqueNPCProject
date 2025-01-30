@@ -14,5 +14,11 @@ public class UniqueNPCProject : ModuleRules
 			"Slate",
 			"SlateCore"
 		});
+
+		// Derleyici ayarları
+		bUseUnity = false; // Unity build'i devre dışı bırak
+		
+		// C++ standart ayarı
+		CppStandard = CppStandardVersion.Cpp17;
 	}
 }

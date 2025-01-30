@@ -7,6 +7,7 @@
 #include "Components/CapsuleComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "Blueprint/UserWidget.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -55,6 +56,40 @@ void AUniqueNPCProjectCharacter::BeginPlay()
 
 	// Tick'te sürekli kontrol etmek için
 	PrimaryActorTick.bCanEverTick = true;
+
+	// Hotbar widget'ını oluştur
+	if (UWorld* World = GetWorld())
+	{
+		if (APlayerController* PC = Cast<APlayerController>(Controller))
+		{
+			if (TSubclassOf<UUserWidget> HotbarWidgetClass = LoadClass<UUserWidget>(nullptr, TEXT("/Game/UI/WBP_Hotbar")))
+			{
+				if (UUserWidget* HotbarWidget = CreateWidget<UUserWidget>(PC, HotbarWidgetClass))
+				{
+					// Widget'ı initialize et
+					if (UFunction* InitFunc = HotbarWidget->FindFunction(FName("Initialize")))
+					{
+						HotbarWidget->ProcessEvent(InitFunc, nullptr);
+					}
+					HotbarWidget->AddToViewport();
+				}
+			}
+		}
+	}
+
+	// Test item'ları ekle
+	FInventoryItem TestItem1;
+	TestItem1.Name = TEXT("Test Item 1");
+	TestItem1.Description = TEXT("This is test item 1");
+	// Icon'u Blueprint'te ayarlayın
+	
+	FInventoryItem TestItem2;
+	TestItem2.Name = TEXT("Test Item 2");
+	TestItem2.Description = TEXT("This is test item 2");
+	// Icon'u Blueprint'te ayarlayın
+
+	AddItemToHotbar(TestItem1);
+	AddItemToHotbar(TestItem2);
 }
 
 void AUniqueNPCProjectCharacter::Tick(float DeltaTime)
@@ -135,12 +170,20 @@ void AUniqueNPCProjectCharacter::SetupPlayerInputComponent(class UInputComponent
 		//Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AUniqueNPCProjectCharacter::Look);
 
-		// Hotbar slot seçimi için
-		for (int32 i = 1; i <= MaxHotbarSlots; i++)
+		// Interaction
+		if (InteractAction)
 		{
-			FString ActionName = FString::Printf(TEXT("SelectHotbarSlot%d"), i);
-			EnhancedInputComponent->BindAction(*ActionName, IE_Pressed, this, 
-				&AUniqueNPCProjectCharacter::SetActiveHotbarSlot, i - 1);
+			EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &AUniqueNPCProjectCharacter::Interact);
+		}
+
+		// Hotbar slots
+		for (int32 i = 0; i < HotbarSlotActions.Num() && i < MaxHotbarSlots; i++)
+		{
+			if (HotbarSlotActions[i])
+			{
+				EnhancedInputComponent->BindAction(HotbarSlotActions[i], ETriggerEvent::Triggered, this, 
+					&AUniqueNPCProjectCharacter::SetActiveHotbarSlot, i);
+			}
 		}
 	}
 }

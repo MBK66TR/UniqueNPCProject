@@ -18,6 +18,7 @@ class ABaseNpc;
 #define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_SPARSE_DATA
 #define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execCloseInteractionWidget); \
 	DECLARE_FUNCTION(execGetNPCReference); \
 	DECLARE_FUNCTION(execRandomizeProperties); \
 	DECLARE_FUNCTION(execReturnToSpawn); \
@@ -26,6 +27,7 @@ class ABaseNpc;
 
 #define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execCloseInteractionWidget); \
 	DECLARE_FUNCTION(execGetNPCReference); \
 	DECLARE_FUNCTION(execRandomizeProperties); \
 	DECLARE_FUNCTION(execReturnToSpawn); \

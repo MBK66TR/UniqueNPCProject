@@ -25,13 +25,13 @@ void EmptyLinkFunctionForGeneratedCodeUniqueNPCProject_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x91E7F8B8,
-				0x0EE28AD3,
+				0x975408ED,
+				0x0A218A8C,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_UniqueNPCProject.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_UniqueNPCProject.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_UniqueNPCProject(Z_Construct_UPackage__Script_UniqueNPCProject, TEXT("/Script/UniqueNPCProject"), Z_Registration_Info_UPackage__Script_UniqueNPCProject, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x91E7F8B8, 0x0EE28AD3));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_UniqueNPCProject(Z_Construct_UPackage__Script_UniqueNPCProject, TEXT("/Script/UniqueNPCProject"), Z_Registration_Info_UPackage__Script_UniqueNPCProject, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x975408ED, 0x0A218A8C));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
