@@ -3,6 +3,7 @@
 #include "AIController.h"
 #include "NavigationSystem.h"
 #include "Blueprint/UserWidget.h"
+#include "CustomerManager.h"
 
 
 // Sets default values
@@ -110,23 +111,23 @@ void ABaseNpc::MoveToTarget()
 {
     if (AAIController* AIController = Cast<AAIController>(GetController()))
     {
-        const float AcceptanceRadius = -1.0f;
+        // Hareket parametrelerini ayarla
+        const float AcceptanceRadius = 50.0f; // Hedefe ne kadar yaklaşacağını belirler
         const bool bStopOnOverlap = true;
         const bool bUsePathfinding = true;
         const bool bProjectDestinationToNavigation = true;
         const bool bCanStrafe = false;
         const bool bAllowPartialPath = true;
 
-        AIController->MoveToLocation(
-            TargetLocation,
-            AcceptanceRadius,
-            bStopOnOverlap,
-            bUsePathfinding,
-            bProjectDestinationToNavigation,
-            bCanStrafe,
-            nullptr,
-            bAllowPartialPath
-        );
+        // Hareketi başlat
+        FAIMoveRequest MoveRequest;
+        MoveRequest.SetGoalLocation(GetNPCTargetLocation());
+        MoveRequest.SetAcceptanceRadius(AcceptanceRadius);
+        MoveRequest.SetReachTestIncludesAgentRadius(true);
+        MoveRequest.SetUsePathfinding(true);
+        MoveRequest.SetAllowPartialPath(true);
+
+        AIController->MoveTo(MoveRequest);
     }
 }
 
@@ -177,6 +178,23 @@ void ABaseNpc::CloseInteractionWidget()
             PC->SetInputMode(InputMode);
         }
     }
+}
+
+void ABaseNpc::OnInteractionComplete()
+{
+    // Spawn noktasına dön
+    ReturnToSpawn();
+
+    // Belirli bir süre sonra yok ol
+    FTimerHandle DestroyTimerHandle;
+    GetWorld()->GetTimerManager().SetTimer(DestroyTimerHandle, [this]()
+    {
+        if (CustomerManager)
+        {
+            CustomerManager->RemoveCustomerFromQueue(this);
+        }
+        Destroy();
+    }, 2.0f, false);
 }
 
 

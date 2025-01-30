@@ -42,6 +42,10 @@ protected:
     UPROPERTY()
     UUserWidget* InteractionWidget;
 
+    // Müşteri durumu
+    UPROPERTY()
+    class ACustomerManager* CustomerManager;
+
 public:	
 
     virtual void Interact_Implementation(AActor* Interactor) override;
@@ -68,5 +72,22 @@ public:
     // Widget'ı kapatmak için yardımcı fonksiyon
     UFUNCTION()
     void CloseInteractionWidget();
+
+    // Etkileşim sonrası çağrılacak
+    virtual void OnInteractionComplete();
+
+    // Target location için getter/setter
+    UFUNCTION(BlueprintCallable, Category = "NPC Movement")
+    virtual FVector GetNPCTargetLocation() const { return TargetLocation; }
+
+    UFUNCTION(BlueprintCallable, Category = "NPC Movement")
+    void SetNPCTargetLocation(const FVector& NewLocation) { TargetLocation = NewLocation; }
+
+    // CustomerManager için getter/setter
+    UFUNCTION(BlueprintCallable, Category = "Customer")
+    void SetCustomerManager(ACustomerManager* Manager) { CustomerManager = Manager; }
+
+    UFUNCTION(BlueprintPure, Category = "Customer")
+    ACustomerManager* GetCustomerManager() const { return CustomerManager; }
 
 };

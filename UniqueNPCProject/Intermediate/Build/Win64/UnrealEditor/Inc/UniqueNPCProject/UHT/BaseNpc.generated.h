@@ -10,6 +10,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class ABaseNpc;
+class ACustomerManager;
 #ifdef UNIQUENPCPROJECT_BaseNpc_generated_h
 #error "BaseNpc.generated.h already included, missing '#pragma once' in BaseNpc.h"
 #endif
@@ -18,6 +19,10 @@ class ABaseNpc;
 #define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_SPARSE_DATA
 #define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execGetCustomerManager); \
+	DECLARE_FUNCTION(execSetCustomerManager); \
+	DECLARE_FUNCTION(execSetNPCTargetLocation); \
+	DECLARE_FUNCTION(execGetNPCTargetLocation); \
 	DECLARE_FUNCTION(execCloseInteractionWidget); \
 	DECLARE_FUNCTION(execGetNPCReference); \
 	DECLARE_FUNCTION(execRandomizeProperties); \
@@ -27,6 +32,10 @@ class ABaseNpc;
 
 #define FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execGetCustomerManager); \
+	DECLARE_FUNCTION(execSetCustomerManager); \
+	DECLARE_FUNCTION(execSetNPCTargetLocation); \
+	DECLARE_FUNCTION(execGetNPCTargetLocation); \
 	DECLARE_FUNCTION(execCloseInteractionWidget); \
 	DECLARE_FUNCTION(execGetNPCReference); \
 	DECLARE_FUNCTION(execRandomizeProperties); \

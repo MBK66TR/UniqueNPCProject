@@ -130,7 +130,9 @@
             "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\editorengine.generated.h",
             "c:\\program files\\epic games\\ue_5.1\\engine\\source\\editor\\unrealed\\public\\subsystems\\importsubsystem.h",
             "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\importsubsystem.generated.h",
-            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\navigationsystem\\uht\\navigationsystem.generated.h"
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\navigationsystem\\uht\\navigationsystem.generated.h",
+            "c:\\dev\\uniquenpcproject\\uniquenpcproject\\source\\uniquenpcproject\\customermanager.h",
+            "c:\\dev\\uniquenpcproject\\uniquenpcproject\\intermediate\\build\\win64\\unrealeditor\\inc\\uniquenpcproject\\uht\\customermanager.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

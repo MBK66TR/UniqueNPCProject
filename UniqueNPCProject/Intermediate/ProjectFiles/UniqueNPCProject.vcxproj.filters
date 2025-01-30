@@ -40,6 +40,12 @@
     <ClInclude Include="..\..\Source\UniqueNPCProject\BaseNpc.h">
       <Filter>Source\UniqueNPCProject</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\UniqueNPCProject\CustomerManager.cpp">
+      <Filter>Source\UniqueNPCProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UniqueNPCProject\CustomerManager.h">
+      <Filter>Source\UniqueNPCProject</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\UniqueNPCProject\IInteractable.cpp">
       <Filter>Source\UniqueNPCProject</Filter>
     </ClCompile>

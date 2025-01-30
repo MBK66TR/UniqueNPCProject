@@ -15,9 +15,40 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 	UNIQUENPCPROJECT_API UClass* Z_Construct_UClass_ABaseNpc();
 	UNIQUENPCPROJECT_API UClass* Z_Construct_UClass_ABaseNpc_NoRegister();
+	UNIQUENPCPROJECT_API UClass* Z_Construct_UClass_ACustomerManager_NoRegister();
 	UNIQUENPCPROJECT_API UClass* Z_Construct_UClass_UIInteractable_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_UniqueNPCProject();
 // End Cross Module References
+	DEFINE_FUNCTION(ABaseNpc::execGetCustomerManager)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(ACustomerManager**)Z_Param__Result=P_THIS->GetCustomerManager();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ABaseNpc::execSetCustomerManager)
+	{
+		P_GET_OBJECT(ACustomerManager,Z_Param_Manager);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetCustomerManager(Z_Param_Manager);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ABaseNpc::execSetNPCTargetLocation)
+	{
+		P_GET_STRUCT_REF(FVector,Z_Param_Out_NewLocation);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetNPCTargetLocation(Z_Param_Out_NewLocation);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ABaseNpc::execGetNPCTargetLocation)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FVector*)Z_Param__Result=P_THIS->GetNPCTargetLocation();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ABaseNpc::execCloseInteractionWidget)
 	{
 		P_FINISH;
@@ -58,10 +89,14 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 		UClass* Class = ABaseNpc::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "CloseInteractionWidget", &ABaseNpc::execCloseInteractionWidget },
+			{ "GetCustomerManager", &ABaseNpc::execGetCustomerManager },
 			{ "GetNPCReference", &ABaseNpc::execGetNPCReference },
+			{ "GetNPCTargetLocation", &ABaseNpc::execGetNPCTargetLocation },
 			{ "MoveToTarget", &ABaseNpc::execMoveToTarget },
 			{ "RandomizeProperties", &ABaseNpc::execRandomizeProperties },
 			{ "ReturnToSpawn", &ABaseNpc::execReturnToSpawn },
+			{ "SetCustomerManager", &ABaseNpc::execSetCustomerManager },
+			{ "SetNPCTargetLocation", &ABaseNpc::execSetNPCTargetLocation },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -86,6 +121,39 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABaseNpc_CloseInteractionWidget_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABaseNpc_GetCustomerManager_Statics
+	{
+		struct BaseNpc_eventGetCustomerManager_Parms
+		{
+			ACustomerManager* ReturnValue;
+		};
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABaseNpc_GetCustomerManager_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(BaseNpc_eventGetCustomerManager_Parms, ReturnValue), Z_Construct_UClass_ACustomerManager_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABaseNpc_GetCustomerManager_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABaseNpc_GetCustomerManager_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseNpc_GetCustomerManager_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Customer" },
+		{ "ModuleRelativePath", "BaseNpc.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseNpc_GetCustomerManager_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseNpc, nullptr, "GetCustomerManager", nullptr, nullptr, sizeof(Z_Construct_UFunction_ABaseNpc_GetCustomerManager_Statics::BaseNpc_eventGetCustomerManager_Parms), Z_Construct_UFunction_ABaseNpc_GetCustomerManager_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseNpc_GetCustomerManager_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseNpc_GetCustomerManager_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseNpc_GetCustomerManager_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseNpc_GetCustomerManager()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABaseNpc_GetCustomerManager_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -121,6 +189,41 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABaseNpc_GetNPCReference_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation_Statics
+	{
+		struct BaseNpc_eventGetNPCTargetLocation_Parms
+		{
+			FVector ReturnValue;
+		};
+		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(BaseNpc_eventGetNPCTargetLocation_Parms, ReturnValue), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation_Statics::Function_MetaDataParams[] = {
+		{ "Category", "NPC Movement" },
+		{ "Comment", "// Target location i\xc3\xa7in getter/setter\n" },
+		{ "ModuleRelativePath", "BaseNpc.h" },
+		{ "ToolTip", "Target location i\xc3\xa7in getter/setter" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseNpc, nullptr, "GetNPCTargetLocation", nullptr, nullptr, sizeof(Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation_Statics::BaseNpc_eventGetNPCTargetLocation_Parms), Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54820400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -193,6 +296,82 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ABaseNpc_SetCustomerManager_Statics
+	{
+		struct BaseNpc_eventSetCustomerManager_Parms
+		{
+			ACustomerManager* Manager;
+		};
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Manager;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABaseNpc_SetCustomerManager_Statics::NewProp_Manager = { "Manager", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(BaseNpc_eventSetCustomerManager_Parms, Manager), Z_Construct_UClass_ACustomerManager_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABaseNpc_SetCustomerManager_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABaseNpc_SetCustomerManager_Statics::NewProp_Manager,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseNpc_SetCustomerManager_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Customer" },
+		{ "Comment", "// CustomerManager i\xc3\xa7in getter/setter\n" },
+		{ "ModuleRelativePath", "BaseNpc.h" },
+		{ "ToolTip", "CustomerManager i\xc3\xa7in getter/setter" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseNpc_SetCustomerManager_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseNpc, nullptr, "SetCustomerManager", nullptr, nullptr, sizeof(Z_Construct_UFunction_ABaseNpc_SetCustomerManager_Statics::BaseNpc_eventSetCustomerManager_Parms), Z_Construct_UFunction_ABaseNpc_SetCustomerManager_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseNpc_SetCustomerManager_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseNpc_SetCustomerManager_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseNpc_SetCustomerManager_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseNpc_SetCustomerManager()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABaseNpc_SetCustomerManager_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics
+	{
+		struct BaseNpc_eventSetNPCTargetLocation_Parms
+		{
+			FVector NewLocation;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_NewLocation_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_NewLocation;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::NewProp_NewLocation_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::NewProp_NewLocation = { "NewLocation", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(BaseNpc_eventSetNPCTargetLocation_Parms, NewLocation), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::NewProp_NewLocation_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::NewProp_NewLocation_MetaData)) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::NewProp_NewLocation,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::Function_MetaDataParams[] = {
+		{ "Category", "NPC Movement" },
+		{ "ModuleRelativePath", "BaseNpc.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseNpc, nullptr, "SetNPCTargetLocation", nullptr, nullptr, sizeof(Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::BaseNpc_eventSetNPCTargetLocation_Parms), Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04C20401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(ABaseNpc);
 	UClass* Z_Construct_UClass_ABaseNpc_NoRegister()
 	{
@@ -234,6 +413,10 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_InteractionWidget_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_InteractionWidget;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CustomerManager_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_CustomerManager;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
@@ -245,10 +428,14 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABaseNpc_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ABaseNpc_CloseInteractionWidget, "CloseInteractionWidget" }, // 420446347
+		{ &Z_Construct_UFunction_ABaseNpc_GetCustomerManager, "GetCustomerManager" }, // 2367569711
 		{ &Z_Construct_UFunction_ABaseNpc_GetNPCReference, "GetNPCReference" }, // 1504406924
+		{ &Z_Construct_UFunction_ABaseNpc_GetNPCTargetLocation, "GetNPCTargetLocation" }, // 3444430302
 		{ &Z_Construct_UFunction_ABaseNpc_MoveToTarget, "MoveToTarget" }, // 313856068
 		{ &Z_Construct_UFunction_ABaseNpc_RandomizeProperties, "RandomizeProperties" }, // 430880416
 		{ &Z_Construct_UFunction_ABaseNpc_ReturnToSpawn, "ReturnToSpawn" }, // 3703173050
+		{ &Z_Construct_UFunction_ABaseNpc_SetCustomerManager, "SetCustomerManager" }, // 2742176679
+		{ &Z_Construct_UFunction_ABaseNpc_SetNPCTargetLocation, "SetNPCTargetLocation" }, // 1514644986
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseNpc_Statics::Class_MetaDataParams[] = {
@@ -314,6 +501,14 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABaseNpc_Statics::NewProp_InteractionWidget = { "InteractionWidget", nullptr, (EPropertyFlags)0x0020080000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ABaseNpc, InteractionWidget), Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABaseNpc_Statics::NewProp_InteractionWidget_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABaseNpc_Statics::NewProp_InteractionWidget_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseNpc_Statics::NewProp_CustomerManager_MetaData[] = {
+		{ "Comment", "// M\xc3\xbc\xc5\x9fteri durumu\n" },
+		{ "ModuleRelativePath", "BaseNpc.h" },
+		{ "ToolTip", "M\xc3\xbc\xc5\x9fteri durumu" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABaseNpc_Statics::NewProp_CustomerManager = { "CustomerManager", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ABaseNpc, CustomerManager), Z_Construct_UClass_ACustomerManager_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABaseNpc_Statics::NewProp_CustomerManager_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABaseNpc_Statics::NewProp_CustomerManager_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABaseNpc_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseNpc_Statics::NewProp_Property1,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseNpc_Statics::NewProp_Property2,
@@ -322,6 +517,7 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseNpc_Statics::NewProp_SpawnLocation,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseNpc_Statics::NewProp_InteractionWidgetClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseNpc_Statics::NewProp_InteractionWidget,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseNpc_Statics::NewProp_CustomerManager,
 	};
 		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ABaseNpc_Statics::InterfaceParams[] = {
 			{ Z_Construct_UClass_UIInteractable_NoRegister, (int32)VTABLE_OFFSET(ABaseNpc, IIInteractable), false },  // 3920413165
@@ -363,9 +559,9 @@ void EmptyLinkFunctionForGeneratedCodeBaseNpc() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABaseNpc, ABaseNpc::StaticClass, TEXT("ABaseNpc"), &Z_Registration_Info_UClass_ABaseNpc, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseNpc), 145510788U) },
+		{ Z_Construct_UClass_ABaseNpc, ABaseNpc::StaticClass, TEXT("ABaseNpc"), &Z_Registration_Info_UClass_ABaseNpc, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseNpc), 2221731886U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_3008547750(TEXT("/Script/UniqueNPCProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_2513323083(TEXT("/Script/UniqueNPCProject"),
 		Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Dev_UniqueNPCProject_UniqueNPCProject_Source_UniqueNPCProject_BaseNpc_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

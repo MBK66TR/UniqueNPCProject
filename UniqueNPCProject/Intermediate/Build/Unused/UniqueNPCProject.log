@@ -1,47 +1,49 @@
 ﻿  Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" UniqueNPCProjectEditor Win64 Development -Project="C:\Dev\UniqueNPCProject\UniqueNPCProject\UniqueNPCProject.uproject" -WaitMutex -FromMsBuild -Rebuild
-C:\Users\mbk\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml(5): warning : The element 'WindowsPlatform' in namespace 'https://www.unrealengine.com/BuildConfiguration' has invalid child element 'ToolchainVersion' in namespace 'https://www.unrealengine.com/BuildConfiguration'. List of possible elements expected: 'bCompilerTrace, PCHMemoryAllocationFactor, bStrictInlineConformance, AdditionalLinkerOptions, StaticAnalyzerOutputType, bStrictConformanceMode, bStrictEnumTypesConformance, StaticAnalyzer, bStrictPreprocessorConformance, bUpdatedCPPMacro, MaxRootPathLength, Compiler, WindowsSdkVersion, MaxNestedPathLength, bClangTimeTrace, bShowIncludes' in namespace 'https://www.unrealengine.com/BuildConfiguration'.
+C:\Users\mbk\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml(5): warning : The element 'WindowsPlatform' in namespace 'https://www.unrealengine.com/BuildConfiguration' has invalid child element 'ToolchainVersion' in namespace 'https://www.unrealengine.com/BuildConfiguration'. List of possible elements expected: 'PCHMemoryAllocationFactor, bCompilerTrace, MaxRootPathLength, bUpdatedCPPMacro, AdditionalLinkerOptions, bStrictEnumTypesConformance, bStrictPreprocessorConformance, StaticAnalyzerOutputType, StaticAnalyzer, WindowsSdkVersion, MaxNestedPathLength, Compiler, bClangTimeTrace, bShowIncludes, bStrictConformanceMode, bStrictInlineConformance' in namespace 'https://www.unrealengine.com/BuildConfiguration'.
   Log file: C:\Users\mbk\AppData\Local\UnrealBuildTool\Log.txt
   Cleaning UniqueNPCProjectEditor and UnrealHeaderTool binaries...
   Using 'git status' to determine working set for adaptive non-unity build (C:\Dev\UniqueNPCProject).
   Creating makefile for UniqueNPCProjectEditor (no existing makefile)
   Parsing headers for UniqueNPCProjectEditor
     Running Internal UnrealHeaderTool C:\Dev\UniqueNPCProject\UniqueNPCProject\UniqueNPCProject.uproject C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UniqueNPCProjectEditor\Development\UniqueNPCProjectEditor.uhtmanifest -WarningsAsErrors -installed
-  Total of 20 written
-  Reflection code generated for UniqueNPCProjectEditor in 0.8767208 seconds
+  Total of 22 written
+  Reflection code generated for UniqueNPCProjectEditor in 0.8499013 seconds
   Waiting for 'git status' command to complete
   Building UniqueNPCProjectEditor...
   Using Visual Studio 2022 14.38.33144 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130) and Windows 10.0.26100.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive Build] Excluded from UniqueNPCProject unity file: IInteractable.cpp, InventoryItemStruct.cpp, PickupItem.cpp, UniqueNPCProjectCharacter.cpp
+  [Adaptive Build] Excluded from UniqueNPCProject unity file: BaseNpc.cpp, CustomerManager.cpp
   Determining max actions to execute in parallel (12 physical cores, 16 logical cores)
     Executing up to 12 processes, one per physical core
-    Requested 1.5 GB free memory per action, 4.86 GB available: limiting max parallel actions to 3
-  Building 25 actions with 3 processes...
-  [1/25] Resource Default.rc2
-  [2/25] Compile SharedPCH.Engine.ShadowErrors.cpp
-  [3/25] Compile UniqueNPCProject.init.gen.cpp
-  [4/25] Compile UniqueNPCProjectProjectile.cpp
-  [5/25] Compile UniqueNPCProjectGameMode.cpp
-  [6/25] Compile PickupItem.gen.cpp
-  [7/25] Compile UniqueNPCProjectProjectile.gen.cpp
-  [8/25] Compile TP_WeaponComponent.gen.cpp
-  [9/25] Compile InventoryItemStruct.cpp
-  [10/25] Compile BaseNpc.gen.cpp
-  [11/25] Compile UniqueNPCProjectCharacter.gen.cpp
-  [12/25] Compile BaseNpc.cpp
-  [13/25] Compile TP_WeaponComponent.cpp
-  [14/25] Compile TP_PickUpComponent.cpp
-  [15/25] Compile TP_PickUpComponent.gen.cpp
-  [16/25] Compile PickupItem.cpp
-  [17/25] Compile InventoryItemStruct.gen.cpp
-  [18/25] Compile UniqueNPCProject.cpp
-  [19/25] Compile IInteractable.gen.cpp
-  [20/25] Compile UniqueNPCProjectGameMode.gen.cpp
-  [21/25] Compile IInteractable.cpp
-  [22/25] Compile UniqueNPCProjectCharacter.cpp
-  [23/25] Link UnrealEditor-UniqueNPCProject.lib
+    Requested 1.5 GB free memory per action, 4.55 GB available: limiting max parallel actions to 3
+  Building 27 actions with 3 processes...
+  [1/27] Resource Default.rc2
+  [2/27] Compile SharedPCH.Engine.ShadowErrors.cpp
+  [3/27] Compile UniqueNPCProjectGameMode.gen.cpp
+  [4/27] Compile UniqueNPCProjectGameMode.cpp
+  [5/27] Compile CustomerManager.gen.cpp
+  [6/27] Compile TP_PickUpComponent.gen.cpp
+  [7/27] Compile IInteractable.cpp
+  [8/27] Compile UniqueNPCProjectProjectile.cpp
+  [9/27] Compile UniqueNPCProject.init.gen.cpp
+  [10/27] Compile UniqueNPCProject.cpp
+  [11/27] Compile BaseNpc.cpp
+  [12/27] Compile TP_WeaponComponent.gen.cpp
+  [13/27] Compile PickupItem.gen.cpp
+  [14/27] Compile PickupItem.cpp
+  [15/27] Compile UniqueNPCProjectCharacter.gen.cpp
+  [16/27] Compile TP_PickUpComponent.cpp
+  [17/27] Compile CustomerManager.cpp
+  [18/27] Compile InventoryItemStruct.cpp
+  [19/27] Compile IInteractable.gen.cpp
+  [20/27] Compile InventoryItemStruct.gen.cpp
+  [21/27] Compile UniqueNPCProjectProjectile.gen.cpp
+  [22/27] Compile BaseNpc.gen.cpp
+  [23/27] Compile TP_WeaponComponent.cpp
+  [24/27] Compile UniqueNPCProjectCharacter.cpp
+  [25/27] Link UnrealEditor-UniqueNPCProject.lib
      Creating library C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Development\UniqueNPCProject\UnrealEditor-UniqueNPCProject.lib and object C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Development\UniqueNPCProject\UnrealEditor-UniqueNPCProject.exp
-  [24/25] Link UnrealEditor-UniqueNPCProject.dll
+  [26/27] Link UnrealEditor-UniqueNPCProject.dll
      Creating library C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Development\UniqueNPCProject\UnrealEditor-UniqueNPCProject.suppressed.lib and object C:\Dev\UniqueNPCProject\UniqueNPCProject\Intermediate\Build\Win64\UnrealEditor\Development\UniqueNPCProject\UnrealEditor-UniqueNPCProject.suppressed.exp
-  [25/25] WriteMetadata UniqueNPCProjectEditor.target
-  Total time in Parallel executor: 53.59 seconds
-  Total execution time: 57.68 seconds
+  [27/27] WriteMetadata UniqueNPCProjectEditor.target
+  Total time in Parallel executor: 53.29 seconds
+  Total execution time: 57.52 seconds

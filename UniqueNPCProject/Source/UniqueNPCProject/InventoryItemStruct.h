@@ -21,7 +21,7 @@ struct FInventoryItem
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
     FString Description;
 
-    // Varsayılan constructor
+    // Default constructor
     FInventoryItem()
     {
         Name = TEXT("Default Item");

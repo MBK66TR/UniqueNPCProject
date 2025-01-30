@@ -21,7 +21,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	// Mesh bileşeni
+	// Mesh component
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pickup")
 	class UStaticMeshComponent* MeshComponent;
 
@@ -29,7 +29,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pickup")
 	class USphereComponent* CollisionSphere;
 
-	// Item verileri
+	// Item data
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup")
 	FInventoryItem ItemData;
 

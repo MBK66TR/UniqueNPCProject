@@ -19,7 +19,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction")
     void Interact(AActor* Interactor);
 
-    // Etkileşime girilip girilemeyeceğini kontrol eden fonksiyon
+    // Function to check if interaction is possible
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction")
     bool CanInteract(AActor* Interactor) const;
 
@@ -27,7 +27,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction")
     void GetNPCProperties(float& Property1, int32& Property2, bool& Property3);
 
-    // Etkileşim seçeneklerini tetiklemek için fonksiyonlar
+    // Functions to trigger interaction options
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction")
     void ExecuteOption1(AActor* Interactor);
 
